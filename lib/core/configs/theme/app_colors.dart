@@ -1,14 +1,17 @@
+import 'package:flutter/material.dart';
+
 class LyraColors {
-  // Arka Plan: Derin Uzay Mavisi
-  static const Color background = Color(0 split: 0xFF0F0C29); 
   
-  // Ana Renk: Gizemli Mor
-  static const Color primaryPurple = Color(0xFF302B63);
+  static const Color primary = Color(0xFF302B63);
   
-  // Vurgu Rengi: Parlak Neon Mavi (Butonlar ve İkonlar için)
+  static const Color lightBackground = Color(0xffF2F2F2);
+
+  static const Color darkBackground = Color(0xFF0F0C29);
+
   static const Color accentCyan = Color(0xFF24C6DC);
+  static const Color darkGray = Color(0xff343434);
+  static const Color lightGray = Color(0xffB3B3B3);
   
-  // Gradyan: Arka plan veya kartlar için geçişli renk
   static const LinearGradient mainGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
