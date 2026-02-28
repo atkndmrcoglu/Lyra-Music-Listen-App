@@ -33,20 +33,20 @@ class _SplashPageState extends State<SplashPage> {
       ),
       body: Stack(
         children: [
-          // --- YUKARIDAKİ MOR (PURPLE) EFEKTLER ---
+
           Align(
-            alignment: const AlignmentDirectional(0, -1.5), // En üst orta
+            alignment: const AlignmentDirectional(0, -1.5),
             child: Container(
               height: 400,
               width: 600,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.purpleAccent, // Buraya LyraColors.purple da yazabilirsin
+                color: Colors.purpleAccent,
               ),
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(-1.5, -1.2), // Üst sol
+            alignment: const AlignmentDirectional(-1.5, -1.2),
             child: Container(
               height: 300,
               width: 300,
@@ -56,8 +56,6 @@ class _SplashPageState extends State<SplashPage> {
               ),
             ),
           ),
-
-          // --- EKRANIN ALTINDAKİ CYAN EFEKTLERİ ---
           Align(
             alignment: const AlignmentDirectional(3, 1.5),
             child: Container(
@@ -91,8 +89,6 @@ class _SplashPageState extends State<SplashPage> {
             ),
           ),
           
-          // --- BLUR KATMANI ---
-          // Bu katman hem üstteki moru hem alttaki cyanı birbirine harmanlar
           BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0),
             child: Container(
@@ -100,7 +96,6 @@ class _SplashPageState extends State<SplashPage> {
             ),
           ),
           
-          // --- LOGO ---
           Center(
             child: Image.asset(
               AppImages.logo,
@@ -126,14 +121,26 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> redirect() async {
-    await Future.delayed(const Duration(seconds: 2));
-    if (!mounted) return;
-    
+  print("DEBUG: 2 saniyelik bekleme başladı...");
+  await Future.delayed(const Duration(seconds: 2));
+  
+  if (!mounted) {
+    print("DEBUG: Widget artık ağaçta değil!");
+    return;
+  }
+  
+  print("DEBUG: Yönlendirme komutu veriliyor...");
+  
+  try {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (BuildContext context) => const GetStartedPage(),
       ),
     );
+    print("DEBUG: Yönlendirme başarılı!");
+  } catch (e) {
+    print("DEBUG: Yönlendirme sırasında HATA: $e");
   }
+}
 }

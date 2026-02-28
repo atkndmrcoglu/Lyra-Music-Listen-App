@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "378170497050",
+    "project_id": "lyra-cbc52",
+    "storage_bucket": "lyra-cbc52.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378170497050:android:59dbc1006cd811edd819a3",
+        "android_client_info": {
+          "package_name": "com.example.lyra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJQl5qKvho8Z4F0xFsBFJkHx5sYob0Wc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
