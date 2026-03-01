@@ -112,7 +112,7 @@ class SignInPage extends StatelessWidget {
           child: Container(
             height: 400,
             width: 600,
-            decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.purpleAccent),
+            decoration: const BoxDecoration(shape: BoxShape.circle, color: LyraColors.primary),
           ),
         ),
         Align(
