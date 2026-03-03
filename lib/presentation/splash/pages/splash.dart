@@ -108,7 +108,7 @@ class _SplashPageState extends State<SplashPage> {
       bottomNavigationBar: const Padding(
         padding: EdgeInsets.all(24.0),
         child: Text(
-          '© 2026 Lyra Tüm Hakları Saklıdır',
+          '© 2026 Lyra All rights reserved.',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 12,
@@ -129,7 +129,6 @@ class _SplashPageState extends State<SplashPage> {
     return;
   }
   
-  print("DEBUG: Yönlendirme komutu veriliyor...");
   
   try {
     Navigator.pushReplacement(

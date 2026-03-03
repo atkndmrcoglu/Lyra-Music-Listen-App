@@ -1,0 +1,10 @@
+//Align(
+            alignment: Alignment.bottomCenter,
+            child: Image.asset(
+              AppImages.badbunny,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.55,
+              fit: BoxFit.cover,
+              alignment: Alignment.topCenter,
+            ),
+          ),

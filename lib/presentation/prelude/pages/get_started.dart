@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lyra/core/configs/assets/app_images.dart';
 import 'package:lyra/common/widgets/buttons/basic_button.dart';
 import 'package:lyra/presentation/prelude/pages/sign_in_page.dart';
+import 'package:lyra/presentation/prelude/pages/sign_up_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -20,18 +21,9 @@ class GetStartedPage extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.black.withOpacity(0.7),
+            color: Colors.black.withOpacity(0.3),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Image.asset(
-              AppImages.badbunny,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.55,
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
+          
 
           SafeArea(
             child: Padding(
@@ -41,15 +33,24 @@ class GetStartedPage extends StatelessWidget {
                 children: [
                   const SizedBox(height: 30),
                   const Text(
-                    'Discover Bad Bunny AND MORE',
+                    'THE LIFE OF A SHOWGIRL',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 19.5,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const Text(
+                    'Discover Taylors world through her eyes. Experience the highs and lows of fame, love, and heartbreak in this immersive narrative with lyra.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const Spacer(),
 
                   BasicButton(
                     onPressed: () {
@@ -58,11 +59,8 @@ class GetStartedPage extends StatelessWidget {
                     },
                     title: 'Sign In',
                   ),
-                  const SizedBox(height: 15),
-                  BasicButton(
-                    onPressed: () {},
-                    title: 'Sign Up',
-                  ),
+                   
+                  
                 ],
               ),
             ),

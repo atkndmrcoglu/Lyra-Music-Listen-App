@@ -11,6 +11,8 @@ class LyraColors {
   static const Color accentCyan = Color(0xFF24C6DC);
   static const Color darkGray = Color(0xff343434);
   static const Color lightGray = Color(0xffB3B3B3);
+
+  static const Color secondary = Color.fromARGB(255, 17, 63, 146);
   
   static const LinearGradient mainGradient = LinearGradient(
     begin: Alignment.topLeft,
