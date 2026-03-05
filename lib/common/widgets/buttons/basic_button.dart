@@ -32,7 +32,7 @@ class BasicButton extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: LyraColors.accentCyan.withOpacity(0.3),
+            color: LyraColors.accentCyan.withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),

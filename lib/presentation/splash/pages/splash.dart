@@ -52,7 +52,7 @@ class _SplashPageState extends State<SplashPage> {
               width: 300,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.deepPurple.withOpacity(0.6),
+                color: Colors.deepPurple.withValues(alpha: 0.6),
               ),
             ),
           ),
@@ -121,25 +121,20 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> redirect() async {
-  print("DEBUG: 2 saniyelik bekleme başladı...");
   await Future.delayed(const Duration(seconds: 2));
   
   if (!mounted) {
-    print("DEBUG: Widget artık ağaçta değil!");
     return;
   }
   
-  
-  try {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (BuildContext context) => const GetStartedPage(),
       ),
     );
-    print("DEBUG: Yönlendirme başarılı!");
-  } catch (e) {
-    print("DEBUG: Yönlendirme sırasında HATA: $e");
-  }
+  
+
+  
 }
 }

@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lyra/core/configs/assets/app_images.dart';
 import 'package:lyra/core/configs/theme/app_colors.dart';
 import 'package:lyra/common/widgets/buttons/basic_button.dart'; 
+import 'package:lyra/presentation/prelude/pages/sign_up_page.dart';
 
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
@@ -64,7 +64,7 @@ class SignInPage extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 15),
-                  _registerText(),
+                  _registerText(context),
                 ],
               ),
             ),
@@ -97,13 +97,22 @@ class SignInPage extends StatelessWidget {
     );
   }
 
-  Widget _registerText() {
-    return const Text(
-      "Not a member? Register now",
-      style: TextStyle(color: Colors.white),
+  Widget _registerText(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) =>  SignUpPage(),
+            ),
+          );
+      },
+      child: const Text(
+        "Not a member? Register now",
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
-
   Widget _buildBackgroundCircles() {
     return Stack(
       children: [
@@ -122,7 +131,7 @@ class SignInPage extends StatelessWidget {
             width: 300,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.deepPurple.withOpacity(0.6),
+              color: Colors.deepPurple.withValues(alpha: 0.6),
             ),
           ),
         ),

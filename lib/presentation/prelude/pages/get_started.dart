@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lyra/core/configs/assets/app_images.dart';
 import 'package:lyra/common/widgets/buttons/basic_button.dart';
 import 'package:lyra/presentation/prelude/pages/sign_in_page.dart';
-import 'package:lyra/presentation/prelude/pages/sign_up_page.dart';
+
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -21,7 +21,7 @@ class GetStartedPage extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
           ),
           
 

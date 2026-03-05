@@ -1,9 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lyra/core/configs/assets/app_images.dart';
 import 'package:lyra/core/configs/theme/app_colors.dart';
 import 'package:lyra/common/widgets/buttons/basic_button.dart'; 
+import 'package:lyra/presentation/prelude/pages/sign_in_page.dart';
+
 class SignUpPage extends StatelessWidget {
    SignUpPage({super.key});
 
@@ -43,7 +44,7 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   const SizedBox(height: 30),
                   const Text(
-                    'Sign In',
+                    'Sign Up',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 32,
@@ -52,18 +53,20 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 50),
+                  _usernameField(context),
+                  const SizedBox(height: 20),
                   _emailField(context),
                   const SizedBox(height: 20),
                   _passwordField(context),
                   const SizedBox(height: 30),
                   BasicButton(
-                    title: 'Sign In', 
+                    title: 'Sign Up', 
                     onPressed: () async {
 
                     },
                   ),
                   const SizedBox(height: 15),
-                  _registerText(),
+                  _loginText(context),
                 ],
               ),
             ),
@@ -73,6 +76,17 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
+
+  Widget _usernameField(BuildContext context) {
+    return TextField(
+      controller: _email,
+      style: const TextStyle(color: Colors.white),
+      decoration: const InputDecoration(
+        hintText: 'Username',
+        hintStyle: TextStyle(color: Colors.white54),
+      ),
+    );
+  } 
   Widget _emailField(BuildContext context) {
     return TextField(
       controller: _email,
@@ -96,10 +110,20 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  Widget _registerText() {
-    return const Text(
-      "Not a member? Register now",
-      style: TextStyle(color: Colors.white),
+  Widget _loginText(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) =>  SignInPage(),
+            ),
+          );
+      },
+      child: const Text(
+        "Already have an account? Log in",
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
 
